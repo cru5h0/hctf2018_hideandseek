@@ -1,0 +1,10 @@
+FROM tiangolo/uwsgi-nginx-flask:python3.6
+COPY ./app /app
+
+RUN apt-get update && apt-get install -y python-pip  \
+    && apt-get install unzip \
+    && pip install -r /app/requirements.txt 
+
+ENV UWSGI_INI /app/it_is_hard_t0_guess_the_path_but_y0u_find_it_5f9s5b5s9.ini
+ENV NGINX_WORKER_PROCESSES auto
+WORKDIR /app/hard_t0_guess_n9f5a95b5ku9fg/
